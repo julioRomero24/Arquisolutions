@@ -1,0 +1,108 @@
+
+body{
+    background: url("https://img.freepik.com/foto-gratis/resumen-humo-rojo-sobre-fondo-blanco-tinta-roja-agua_55716-2223.jpg?size=626&ext=jpg");
+    background-size: cover;  
+    
+}
+#titulo{
+    background: rgb(167, 18, 18);
+    width: 17%;
+    padding:  10px;
+    border-radius: 20px;
+}
+#uno{
+    background:  url("https://mecaluxes.cdnwm.com/blog/img/automatizacion-almacen-eficiencia-logistica-produccion.1.10.jpg");
+ padding: 10px;
+ background-repeat: no-repeat;
+color: white;
+}
+#h{
+    background: black;
+    color: white;
+}
+.galeria{
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+
+}
+.galeria:hover{
+    border: 1px solid #777;
+}
+.galeria img{
+    width: 100%;
+    height: auto;
+}
+.desc {
+    padding: 15px;
+    text-align: center;
+
+
+
+
+
+
+}    
+.f{
+    border-left: 1px solid #4e4d4d;
+    color: #424242;
+    font-size: 21px;
+    font-weight: 600;
+    padding: 0 24px;
+    display: inline-block;
+    text-decoration: none;
+}
+#divi{
+ display: flex;
+ width: 60%;
+ padding: 20px;
+ 
+}
+.f:hover{
+    color: brown;
+}
+nav{
+    
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+.button{
+    background: rgb(233, 110, 110);
+
+      
+    color: #424242;
+    padding: 10px 0;
+    border: 2px  solid #424242;
+    display: none;
+}
+
+@media (max-width: 500px) {
+    nav{
+        background: rgb(233, 110, 110);
+        flex-direction: column;
+         
+    }
+    .f{
+        margin: 10px 0;
+        
+    }
+    .button{
+        display: inline-block;
+    }
+    .se{
+        display: none;
+    }
+    #Nosotros{
+        padding: initial;
+    }
+    .lead {
+        font-size: 1.25rem;
+        font-weight: 300;
+      }
+.page-top{
+    background-color: gray;
+}
+
