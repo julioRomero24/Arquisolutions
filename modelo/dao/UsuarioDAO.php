@@ -33,7 +33,7 @@ class UsuarioDAO {
                 //Los nombres de los campos corresponden a los nombres que tienen en la 
                 //base de datos, por ejemplo: id, nombre, correo, password, etc.
                 $usuario = new Usuario(
-                        $data_table[$indice]["idUsuario"],
+                        $data_table[$indice]["idusuario"],
                         $data_table[$indice]["nombre"],
                         $data_table[$indice]["apellido"],
                         $data_table[$indice]["telefono"],

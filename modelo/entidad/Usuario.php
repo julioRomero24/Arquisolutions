@@ -22,7 +22,7 @@ class Usuario
         $this->nombre = $nombre;
         $this->apellido = $apellido;
         $this->telefono = $telefono;
-		$this->correoElectronico = $correo;
+		$this->correoElectronico = $correoElectronico;
 		$this->contraseña = $contraseña;
         $this->rol = $rol;
     }
@@ -34,7 +34,13 @@ class Usuario
 
     public function getNombre()
     {
-        return $this->nombre.' '.$this->apellido;
+        return $this->nombre;
+    }
+
+    
+    public function getApellido()
+    {
+        return $this->apellido;
     }
 
     

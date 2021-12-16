@@ -11,7 +11,7 @@
         $correo = $_POST['correo'];
         $password = $_POST['password'];
 
-        
+    
 
         //Se llama a la funcion autenticarUsuario() que esta en mdbUsuario.php
         $user = autenticarUsuario($correo, $password);
@@ -31,7 +31,8 @@
 
         }else{
             //Si el usuario no existe se vuelve a mostrar el login
-            header("Location: ../../vista/login.php");
+            // header("Location: ../../vista/login.php");
+            echo 'Error, usuario y contraseña incorrecta';
         }
 
 

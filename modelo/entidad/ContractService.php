@@ -1,6 +1,6 @@
 <?php
 
-class ServicioContratadoXusuario
+class ContractService
 {
     private $idServicioContratado;
     private $costo;

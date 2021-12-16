@@ -1,7 +1,8 @@
 <?php
 //Se obtiene la sesión existente
 session_start();
-
+$session_value=(isset($_SESSION['ID_USUARIO']))?$_SESSION['ID_USUARIO']:'';
+$hola = 'hola mundi';
 //Si no existe la sesion con el nombre ID_USUARIO, se redirige
 //a la vista login.php
 
@@ -11,64 +12,53 @@ session_start();
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
+     
     <title  > Arquisolution S.A.S </title>
     
-
-    <style>
-		.opc-usuario *{
-            padding-left: 0px;
-            padding-right:0px;
-            margin :0px;
-        }
-        .opc-usuario ul a{
-            text-decoration:none;
-        }
-        .opc-usuario ul{
-            list-style: none;
-            position: absolute;
-            display:none;
-        }
-        
-        .opc-usuario:hover >ul{
-            display:block;
-        }
-	</style>
-        <link rel="stylesheet" href="arquisolution.css">
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="shourtcut icon" href="img/logo1.png">
+    <link rel="stylesheet" href="arquisolution.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shourtcut icon" href="img/logo1.png">
 </head>
 <body id="page-top">
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="border: solid blac; background-color: #CCC5C4
+" id="mainNav">
+        <div class="container" >
             <a class="navbar-brand" href="#page-top"><img src="img/logo1.png" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <div class="collapse navbar-collapse" id="navbarResponsive" ">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0" >
                     <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="misionvsion.html">Misión y visión</a></li>
 
                     <li class="nav-item opc-usuario">
-                        <a class="nav-link" href="#">
-                        <?php if (isset($_SESSION['ID_USUARIO']))
-                                echo 'a aaa';
-                                
-								echo $_SESSION['NOMBRE_USUARIO'];
-                                ?>
+        
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <?php 
+                            // if (isset($_SESSION['ID_USUARIO'])){
+
+                           // }
+
+                 
+                            if (isset($_SESSION['NOMBRE_USUARIO'])){
+                                echo $_SESSION['NOMBRE_USUARIO'];
+                            }  
+                            else{
+                                echo 'NADA';
+                            } 
+							
+                        ?>
                         </a>
                         <ul>
                             <li><a href="">servicios adquiridos</a></li>
@@ -84,11 +74,7 @@ session_start();
                        
 						
                     </li>
-                    
-
-                    
-
-                   
+                               
                     <!--<li class="nav-item"><a class="nav-link" href="obras.html">Obras</a></li>-->
                     
                 </ul>
@@ -139,7 +125,7 @@ session_start();
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img-servicios/remodelaciones.jpg" alt="..." />
+                            <img class="img-fluid" src="img/img-servicios/remodelaciones.jpg" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Remodelaciones</div>
@@ -154,7 +140,7 @@ session_start();
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img-servicios/jardin.jpg" alt="..." />
+                            <img class="img-fluid" src="img/img-servicios/jardin.jpg" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Diseño de jardines</div>
@@ -169,7 +155,7 @@ session_start();
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" id="img-acabados" src="img-servicios/acabados.jpg" alt="..." />
+                            <img class="img-fluid" id="img-acabados" src="img/img-servicios/acabados.jpg" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Acabados arquitectónicos</div>
@@ -184,7 +170,7 @@ session_start();
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img-servicios/humedad.jpg" alt="..." />
+                            <img class="img-fluid" src="img/img-servicios/humedad.jpg" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Reparación locativas</div>
@@ -199,7 +185,7 @@ session_start();
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img-servicios/fachada.jfif" alt="..." />
+                            <img class="img-fluid" src="img/img-servicios/fachada.jfif" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Recuperación fachadas</div>
@@ -214,7 +200,7 @@ session_start();
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="img-servicios/interventoriaa.jfif" alt="..." />
+                            <img class="img-fluid" src="img/img-servicios/interventoriaa.jfif" alt="..." />
                         </a>
                         <div class="portfolio-caption">
                             <div class="portfolio-caption-heading">Asesorías e Interventorías</div>
@@ -464,7 +450,7 @@ session_start();
                                 <!-- Project details-->
                                 <h2 class="text-uppercase">Remodelaciones</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
+                                <!-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." /> -->
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                 <ul class="list-inline">
                                     <li>
@@ -476,7 +462,7 @@ session_start();
                                         Illustration
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button onClick="location.href = 'remodelaciones.html'"  class="btn btn-primary btn-xl text-uppercase idRemodelaciones" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Adquirir servicio
                                 </button>
@@ -497,9 +483,9 @@ session_start();
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
+                                <h2 class="text-uppercase">Diseño Jardines</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." />
+                                <!-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..." /> -->
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                 <ul class="list-inline">
                                     <li>
@@ -511,7 +497,7 @@ session_start();
                                         Graphic Design
                                     </li>
                                 </ul>
-                                <button class="botonAdquirir btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button onClick="location.href = 'disenojardines.html'" class="botonAdquirir btn btn-primary btn-xl text-uppercase idRemodelaciones" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Adquirir servicio
                                 </button>
@@ -532,9 +518,9 @@ session_start();
                         <div class="col-lg-8">
                             <div class="modal-body">
                                 <!-- Project details-->
-                                <h2 class="text-uppercase">Project Name</h2>
+                                <h2 class="text-uppercase">Acabados</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." />
+                                <!-- <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..." /> -->
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                 <ul class="list-inline">
                                     <li>
@@ -546,7 +532,7 @@ session_start();
                                         Identity
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button onClick="location.href = 'acabados.html'" class="btn btn-primary btn-xl text-uppercase idRemodelaciones" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Adquirir servicio
                                 </button>
@@ -581,7 +567,7 @@ session_start();
                                         Branding
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-primary btn-xl text-uppercase idRemodelaciones" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Adquirir servicio
                                 </button>
@@ -616,7 +602,7 @@ session_start();
                                         Website Design
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-primary btn-xl text-uppercase idRemodelaciones" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Adquirir servicio
                                 </button>
@@ -651,7 +637,7 @@ session_start();
                                         Photography
                                     </li>
                                 </ul>
-                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <button class="btn btn-primary btn-xl text-uppercase idRemodelaciones" data-bs-dismiss="modal" type="button">
                                     <i class="fas fa-times me-1"></i>
                                     Adquirir servicio
                                 </button>
@@ -671,7 +657,38 @@ session_start();
     <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <!-- <script src="./js/logica/arquisolutions.php"></script> -->
+    <script>
+       var foo="<?php echo $_SESSION['NOMBRE_USUARIO']; ?>";
+       var aux = $(".idRemodelaciones").text();
+       console.log(aux)
+        $(".idRemodelaciones").click(function(data) {
+            console.log(data)
+            // $(location).attr('href','services.html');
+        });
+    </script>
 </body>
 
 </html>
 </html>
+
+<style>
+		.opc-usuario *{
+            padding-left: 0px;
+            padding-right:0px;
+            margin :0px;
+        }
+        .opc-usuario ul a{
+            text-decoration:none;
+        }
+        .opc-usuario ul{
+            list-style: none;
+            position: absolute;
+            display:none;
+        }
+        
+        .opc-usuario:hover >ul{
+            display:block;
+        }
+	</style>

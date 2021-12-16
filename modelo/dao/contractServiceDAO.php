@@ -1,9 +1,9 @@
 <?php
 
 require_once ("DataSource.php");
-require_once (__DIR__."/../entidad/ServiciosContratadosXusuario.php");
+require_once (__DIR__."/../entidad/ContractService.php");
 
-class ServiciosContratadosXusuarioDAO{
+class ContractService{
     
     public function verServiciosContratados($idUsuario){
         $data_source = new DataSource();
@@ -14,7 +14,7 @@ class ServiciosContratadosXusuarioDAO{
         $servicios=array();
 
         foreach($data_table as $indice => $valor){
-            $servicio = new ServicioContratadoXusuario(
+            $servicio = new ContractService(
                     $data_table[$indice]["id"],
                     $data_table[$indice]["nombre"], 
                     $data_table[$indice]["idTipoEjercicio"],
@@ -51,14 +51,16 @@ class ServiciosContratadosXusuarioDAO{
 
     }
     
-    public function guardarEjercicios($idTabata,$idEjercicio){
+    public function addContratcService($costo, $idServicio, $fecha, $idUsuario){
         $data_source = new DataSource();
         
-        $stmt1 = "INSERT INTO ejercicioxtabata VALUES (:idTabata,:idEjercicio)"; 
+        $stmt1 = "INSERT INTO servicioscontratadosxusuario VALUES (:costo,:idservicio, :fecha, :idusuario)"; 
         
         $resultado = $data_source->ejecutarActualizacion($stmt1, array(
-            ':idTabata' => $idTabata,
-            ':idEjercicio' => $idEjercicio
+            ':costo' => $costo,
+            ':idservicio' => $idServicio,
+            ':fecha' => $idTabata,
+            ':idusuario' => $idUsuario
             )
         );
         
